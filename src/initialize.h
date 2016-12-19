@@ -1,7 +1,8 @@
 #ifndef _INITIALIZE_H_
 #define _INITIALIZE_H_
+
+#include <SDL2/SDL.h>
 #include "game.h"
-int other_func(char* in);
 
 game_error initialize();
 
