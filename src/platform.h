@@ -5,6 +5,7 @@
 #include "game.h"
 
 game_error initialize();
+void close();
 
 #else
 #endif
