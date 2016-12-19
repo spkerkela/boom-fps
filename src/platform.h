@@ -6,6 +6,7 @@
 
 game_error initialize();
 void close();
+void draw();
 
 #else
 #endif

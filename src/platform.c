@@ -19,8 +19,6 @@ game_error initialize() {
       return log_SDL_error();
     } else {
       gScreenSurface = SDL_GetWindowSurface(gWindow);
-      SDL_FillRect(gScreenSurface, NULL, SDL_MapRGB(gScreenSurface->format, 0xFF, 0xFF, 0xFF));
-      SDL_UpdateWindowSurface(gWindow);
     }
   }
   return GAME_OK;
@@ -29,4 +27,9 @@ game_error initialize() {
 void close() {
   SDL_DestroyWindow(gWindow);
   SDL_Quit();
+}
+
+void draw() {
+  SDL_FillRect(gScreenSurface, NULL, SDL_MapRGB(gScreenSurface->format, 0xFF, 0xFF, 0xFF));
+  SDL_UpdateWindowSurface(gWindow);
 }
