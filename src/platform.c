@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "initialize.h"
+#include "platform.h"
 
 game_error log_SDL_error() {
   printf("SDL Error %s\n", SDL_GetError());

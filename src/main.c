@@ -2,7 +2,7 @@
 #include <math.h>
 #include <SDL2/SDL.h>
 #include "game.h"
-#include "initialize.h"
+#include "platform.h"
 
 const double CIRCLE = M_PI * 2;
 int main(int argc, char** argv) {
