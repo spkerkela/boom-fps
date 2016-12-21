@@ -6,7 +6,7 @@
 
 game_error initialize();
 void close();
-void draw();
+void draw(map, player);
 
 #else
 #endif

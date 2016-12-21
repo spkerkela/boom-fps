@@ -2,7 +2,8 @@
 #define _GAME_LOOP_H_
 
 #include "platform.h"
+#include "game.h"
 
-void main_loop();
+void main_loop(map, player);
 
 #endif

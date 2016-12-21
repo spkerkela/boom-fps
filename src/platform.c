@@ -4,6 +4,8 @@
 SDL_Window* gWindow = NULL;
 SDL_Surface* gScreenSurface = NULL;
 
+const uint32_t TILE_SIZE = 2;
+
 game_error log_SDL_error() {
   printf("SDL Error %s\n", SDL_GetError());
   return GAME_GRAPHICS_ERROR;
@@ -29,7 +31,22 @@ void close() {
   SDL_Quit();
 }
 
-void draw() {
+void draw(map game_map, player p) {
+  int x, y;
+  SDL_Rect rect;
+  rect.w = TILE_SIZE;
+  rect.h = TILE_SIZE;
   SDL_FillRect(gScreenSurface, NULL, SDL_MapRGB(gScreenSurface->format, 0xFF, 0xFF, 0xFF));
+  for(x = 0; x < game_map.width; ++x) {
+    for(y = 0; y < game_map.height; ++y) {
+      rect.x = x * TILE_SIZE;
+      rect.y = y * TILE_SIZE;
+      if(game_map.wall_grid[x + (y * game_map.width)] == 0) {
+        SDL_FillRect(gScreenSurface, &rect, SDL_MapRGB(gScreenSurface->format, 0x01, 0xFF, 0x01));
+      } else {
+        SDL_FillRect(gScreenSurface, &rect, SDL_MapRGB(gScreenSurface->format, 0xCC, 0xCC, 0xCC));
+      }
+    }
+  }
   SDL_UpdateWindowSurface(gWindow);
 }

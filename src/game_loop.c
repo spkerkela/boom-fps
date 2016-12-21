@@ -2,7 +2,7 @@
 #include "game_loop.h"
 #include <stdint.h>
 
-void main_loop() {
+void main_loop(map m, player p) {
   char quit = 0;
   SDL_Event e;
 
@@ -11,7 +11,7 @@ void main_loop() {
       if(e.type == SDL_QUIT) {
         quit = 1;
       } else {
-        draw();
+        draw(m, p);
       }
     }
   }
