@@ -12,13 +12,13 @@ typedef struct player {
   double x;
   double y;
   double direction;
-} player;
+} Player;
 
 typedef struct map {
   uint32_t width;
   uint32_t height;
   char* wall_grid;
-} map;
+} Map;
 
 static const int GAME_SCREEN_WIDTH = 640;
 static const int GAME_SCREEN_HEIGHT = 480;

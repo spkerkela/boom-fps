@@ -2,7 +2,7 @@
 #include "game_loop.h"
 #include <stdint.h>
 
-void main_loop(map m, player p) {
+void main_loop(Map m, Player p) {
   char quit = 0;
   SDL_Event e;
 

@@ -4,6 +4,6 @@
 #include "platform.h"
 #include "game.h"
 
-void main_loop(map, player);
+void main_loop(Map, Player);
 
 #endif

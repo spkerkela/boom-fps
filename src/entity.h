@@ -1,6 +1,8 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include <stdint.h>
+
 static const int ENTITY_COUNT = 200;
 
 typedef uint32_t entity_id;
@@ -20,9 +22,9 @@ typedef struct {
 typedef struct {
   entity_id mask[ENTITY_COUNT];
   position pos[ENTITY_COUNT];
-} world;
+} World;
 
-entity_id create_entity(world *w);
-void destroy_entity(world *w, entity_id);
+entity_id create_entity(World *w);
+void destroy_entity(World *w, entity_id);
 
 #endif

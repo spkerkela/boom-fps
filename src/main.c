@@ -8,8 +8,8 @@
 
 const double CIRCLE = M_PI * 2;
 
-map create_map(uint32_t width, uint32_t height) {
-  map m;
+Map create_map(uint32_t width, uint32_t height) {
+  Map m;
   uint32_t x, y;
   char* grid = calloc(width*height, sizeof(char));
   m.width = width;
@@ -27,8 +27,8 @@ map create_map(uint32_t width, uint32_t height) {
   return m;
 }
 
-player create_player(double x, double y, double direction) {
-  player p;
+Player create_player(double x, double y, double direction) {
+  Player p;
   p.x = x;
   p.y = y;
   p.direction = direction;

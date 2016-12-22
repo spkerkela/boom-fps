@@ -31,7 +31,7 @@ void close() {
   SDL_Quit();
 }
 
-void draw(map game_map, player p) {
+void draw(Map game_map, Player p) {
   int x, y;
   SDL_Rect rect;
   rect.w = TILE_SIZE;
