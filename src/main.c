@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 #include <stdint.h>
 #include <math.h>
 #include <SDL2/SDL.h>
@@ -7,6 +9,7 @@
 #include "game_loop.h"
 
 const double CIRCLE = M_PI * 2;
+
 
 Map create_map(uint32_t width, uint32_t height) {
   Map m;
@@ -19,7 +22,11 @@ Map create_map(uint32_t width, uint32_t height) {
       if(x == 0 || x == width - 1 || y == 0 || y == height - 1) {
         grid[x + (y * width)] = 1;
       } else {
-        grid[x + (y * width)] = 0;
+        if(rand() % 2 == 0) {
+          grid[x + (y * width)] = 1;
+        } else {
+          grid[x + (y * width)] = 0;
+        }
       }
     }
   }
@@ -36,6 +43,7 @@ Player create_player(double x, double y, double direction) {
 }
 
 int main(int argc, char** argv) {
+  srand(time(NULL));
   if(initialize() != GAME_OK) {
     printf("ERROR INITIALIZING\n");
     return 1;
