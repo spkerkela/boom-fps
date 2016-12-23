@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
 #include <stdint.h>
 #include <math.h>
 #include <SDL2/SDL.h>
@@ -8,8 +10,9 @@
 
 const double CIRCLE = M_PI * 2;
 
-map create_map(uint32_t width, uint32_t height) {
-  map m;
+
+Map create_map(uint32_t width, uint32_t height) {
+  Map m;
   uint32_t x, y;
   char* grid = calloc(width*height, sizeof(char));
   m.width = width;
@@ -19,7 +22,11 @@ map create_map(uint32_t width, uint32_t height) {
       if(x == 0 || x == width - 1 || y == 0 || y == height - 1) {
         grid[x + (y * width)] = 1;
       } else {
-        grid[x + (y * width)] = 0;
+        if(rand() % 2 == 0) {
+          grid[x + (y * width)] = 1;
+        } else {
+          grid[x + (y * width)] = 0;
+        }
       }
     }
   }
@@ -27,20 +34,13 @@ map create_map(uint32_t width, uint32_t height) {
   return m;
 }
 
-player create_player(double x, double y, double direction) {
-  player p;
-  p.x = x;
-  p.y = y;
-  p.direction = direction;
-  return p;
-}
-
 int main(int argc, char** argv) {
+  srand(time(NULL));
   if(initialize() != GAME_OK) {
     printf("ERROR INITIALIZING\n");
     return 1;
   } else {
-    main_loop(create_map(100, 200), create_player(1.0, 1.0, 0.0));
+    main_loop(create_map(100, 200));
     close();
     return 0;
   }

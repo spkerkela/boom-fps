@@ -4,7 +4,7 @@
 SDL_Window* gWindow = NULL;
 SDL_Surface* gScreenSurface = NULL;
 
-const uint32_t TILE_SIZE = 2;
+const uint32_t TILE_SIZE = 12;
 
 game_error log_SDL_error() {
   printf("SDL Error %s\n", SDL_GetError());
@@ -31,7 +31,7 @@ void close() {
   SDL_Quit();
 }
 
-void draw(map game_map, player p) {
+void draw(Map game_map) {
   int x, y;
   SDL_Rect rect;
   rect.w = TILE_SIZE;
