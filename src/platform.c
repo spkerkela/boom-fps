@@ -31,6 +31,15 @@ void close() {
   SDL_Quit();
 }
 
+void draw_point(uint32_t x, uint32_t y) {
+  SDL_Rect rect;
+  rect.x = x * TILE_SIZE;
+  rect.y = y * TILE_SIZE;
+  rect.w = TILE_SIZE;
+  rect.h = TILE_SIZE;
+  SDL_FillRect(gScreenSurface, &rect, SDL_MapRGB(gScreenSurface->format, 0xEE, 0xDD, 0xFF));
+}
+
 void draw(Map game_map) {
   int x, y;
   SDL_Rect rect;
@@ -48,5 +57,8 @@ void draw(Map game_map) {
       }
     }
   }
+}
+
+void draw_end() {
   SDL_UpdateWindowSurface(gWindow);
 }

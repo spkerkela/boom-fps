@@ -7,8 +7,7 @@ void draw_system(World *w) {
   for(id = 0; id < ENTITY_COUNT; id++) {
     if((w->mask[id] & DRAW_MASK) == DRAW_MASK) {
       Position p = w->pos[id];
-      printf("draw %d %s\n", id, w->appearance[id].name);
-      printf("position is %f %f %f\n", p.x, p.y, p.direction);
+      draw_point(p.x, p.y);
     }
   }
 }

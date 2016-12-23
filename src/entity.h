@@ -20,7 +20,7 @@ typedef struct {
 } Appearance;
 
 typedef struct {
-  double x, y, direction;
+  uint32_t x, y, direction;
 } Position;
 
 typedef struct {

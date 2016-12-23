@@ -7,6 +7,8 @@
 game_error initialize();
 void close();
 void draw(Map);
+void draw_point(uint32_t x, uint32_t y);
+void draw_end();
 
 #else
 #endif
