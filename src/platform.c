@@ -37,7 +37,7 @@ void draw_point(uint32_t x, uint32_t y) {
   rect.y = y * TILE_SIZE;
   rect.w = TILE_SIZE;
   rect.h = TILE_SIZE;
-  SDL_FillRect(gScreenSurface, &rect, SDL_MapRGB(gScreenSurface->format, 0xEE, 0xDD, 0xFF));
+  SDL_FillRect(gScreenSurface, &rect, SDL_MapRGB(gScreenSurface->format, 0xFF, 0x00, 0x00));
 }
 
 void draw(Map game_map) {
