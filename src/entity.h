@@ -13,18 +13,24 @@ typedef enum {
   COMPONENT_NONE = 0,
   COMPONENT_POSITION = 1 << 0,
   COMPONENT_APPEARANCE = 1 << 1,
-} component;
+} Component;
 
 typedef struct {
-  float x, y;
-} position;
+  char* name;
+} Appearance;
+
+typedef struct {
+  double x, y, direction;
+} Position;
 
 typedef struct {
   entity_id mask[ENTITY_COUNT];
-  position pos[ENTITY_COUNT];
+  Position pos[ENTITY_COUNT];
+  Appearance appearance[ENTITY_COUNT];
 } World;
 
 entity_id create_entity(World *w);
+entity_id create_player(World *w, double x, double y, double direction);
 void destroy_entity(World *w, entity_id);
 
 #endif

@@ -8,13 +8,7 @@ typedef enum {
   GAME_ERROR_COUNT
 } game_error;
 
-typedef struct player {
-  double x;
-  double y;
-  double direction;
-} Player;
-
-typedef struct map {
+typedef struct {
   uint32_t width;
   uint32_t height;
   char* wall_grid;

@@ -3,7 +3,9 @@
 
 #include "platform.h"
 #include "game.h"
+#include "entity.h"
+#include "systems.h"
 
-void main_loop(Map, Player);
+void main_loop(Map);
 
 #endif
